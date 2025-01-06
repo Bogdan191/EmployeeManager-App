@@ -1,0 +1,18 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;">Employee Manager</a>
+ <button class="btn btn-secondary" style="margin-left: 20px;"> Add New Employee </button>
+ <input id="showEmployees" *ngIf="hideEmployees" type="button" [checked]="showEmployees" class="btn btn-secondary" style="margin-left: 20px;" (click)="toggleEmployees()" value="Show All Employees" > 
+ <input id="hideEmployees"  *ngIf="showEmployees" type="button" [checked]="hideEmployees" class="btn btn-secondary" style="margin-left:  20px;" (click)="toggleEmployees()" value="Hide All Employees" > 
+ 
+</nav>
+
+<div>
+  <label for="showEmployees">
+   
+  </label>
+      <div *ngIf="showEmployees">
+        <api-employees></api-employees>
+      </div>
+    
