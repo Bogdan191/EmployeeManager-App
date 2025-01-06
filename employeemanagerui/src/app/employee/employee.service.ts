@@ -13,15 +13,21 @@ const httpOptions = {
 
 @Injectable()
 export class EmployeeService { 
-    employeesUrl = 'http://localhost:8080/employee/all'; 
+    employeesUrl = 'http://localhost:8080/employee'; 
 
     constructor(private http: HttpClient) {
 
     }
 
-      /** GET heroes from the server */
+      /** GET employees from the server */
   getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(this.employeesUrl)
+    return this.http.get<Employee[]>(`${this.employeesUrl}/all`)
       .pipe();
   }
+
+  addEmployee(employee: Employee): Observable<Employee> {
+    return this.http.post<Employee>(`${this.employeesUrl}/add`, employee);
+  }
+
+
 }
