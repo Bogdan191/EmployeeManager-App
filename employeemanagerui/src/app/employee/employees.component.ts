@@ -20,7 +20,9 @@ export class EmployeesComponent implements OnInit {
     public deleteEmployee: Employee | undefined;
     showEmployees = true; 
     hideEmployees = false; 
-    constructor (private employeeService: EmployeeService) {}
+    constructor (private employeeService: EmployeeService) {
+        
+    }
 
     ngOnInit() {
         this.getEmployees();
@@ -49,6 +51,33 @@ export class EmployeesComponent implements OnInit {
                 addForm.reset();
             }
 
+        );
+    }
+
+    public onUpdateEmployee(employee: Employee) : void {
+        this.employeeService.updateEmployee(employee).subscribe(
+            (response: Employee) => {
+                console.log(response); 
+                this.getEmployees();
+            },
+            (error: HttpErrorResponse) => {
+                alert(error.message);
+                
+            }
+        );
+    }
+
+    public onDeleteEmployee(employeeId : number | undefined) : void {
+        if(employeeId != undefined)
+        this.employeeService.deleteEmployee(employeeId).subscribe(
+            (response: void) => {
+                console.log(response);
+                alert('The employee was successfully removed'); 
+                this.getEmployees();
+            },
+            (error: HttpErrorResponse) => {
+                alert(error.message); 
+            }
         );
     }
 

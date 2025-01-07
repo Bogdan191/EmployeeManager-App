@@ -1,5 +1,5 @@
 export interface Employee {
-    id: string;
+    id: number | undefined;
     name: string; 
     email: string; 
     jobTitle: string; 

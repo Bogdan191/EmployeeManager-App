@@ -12,13 +12,6 @@ import { Employee } from './employee/employee';
 })
 export class AppComponent  {
   title = 'employeemanagerui';
-  showEmployees = true; 
-  hideEmployees = false; 
- 
-  toggleEmployees() {
-    var aux = this.showEmployees;
-    this.showEmployees = this.hideEmployees;
-    this.hideEmployees = aux; 
-  }
+
 
 }
