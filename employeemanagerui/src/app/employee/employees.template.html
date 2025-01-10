@@ -13,10 +13,11 @@
        <input id="showEmployees" *ngIf="hideEmployees" type="button" [checked]="showEmployees" class="btn btn-secondary" style="margin-left: 20px;" (click)="toggleEmployees()" value="Show All Employees" > 
        <input id="hideEmployees"  *ngIf="showEmployees" type="button" [checked]="hideEmployees" class="btn btn-secondary" style="margin-left:  20px;" (click)="toggleEmployees()" value="Hide All Employees" > 
        
-       <!-- <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" style=" margin-left: 20%;">
           <input type="search" (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel
            name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>
-       </form> -->
+       </form> 
+
     </div>
   </nav>
   <div class="container" id="main-container" *ngIf="showEmployees">
